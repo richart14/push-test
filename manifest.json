@@ -1,0 +1,15 @@
+{
+  "short_name": "test",
+  "name": "Push tester",
+  "icons": [
+    {
+      "src": "/images/intro_ball.gif",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "theme_color": "#3367D6"
+}
