@@ -6,9 +6,3 @@
 body {
   background-color: beige;
 }
-
-.add-button {
-  position: absolute;
-  top: 1px;
-  left: 1px;
-}
