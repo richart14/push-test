@@ -44,20 +44,20 @@ self.addEventListener('push', function(event) {
   }
 })
 
-self.addEventListener('fetch', function(event) {
-  console.log('fetching');
-  event.respondWith(
-    caches.match(event.request)
-      .then(function(response) {
-        // Cache hit - return response
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      }
-    )
-  );
-});
+// self.addEventListener('fetch', function(event) {
+//   console.log('fetching');
+//   event.respondWith(
+//     caches.match(event.request)
+//       .then(function(response) {
+//         // Cache hit - return response
+//         if (response) {
+//           return response;
+//         }
+//         return fetch(event.request);
+//       }
+//     )
+//   );
+// });
 
 const showLocalNotification = (title, body, swRegistration) => {
   const options = {
