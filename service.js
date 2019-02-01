@@ -11,7 +11,11 @@ const urlB64ToUint8Array = base64String => {
   return outputArray
 }
 const saveSubscription = async subscription => {
-  const SERVER_URL = 'https://pushservertest.herokuapp.com/save-subscription'
+  // comment one of the server url's to change it
+  // heroku app
+  // const SERVER_URL = 'https://pushservertest.herokuapp.com/save-subscription'
+  // localhost
+  const SERVER_URL = 'http://localhost:8080/save-subscription'
   const response = await fetch(SERVER_URL, {
     method: 'post',
     headers: {
