@@ -13,9 +13,9 @@ const urlB64ToUint8Array = base64String => {
 const saveSubscription = async subscription => {
   // comment one of the server url's to change it
   // heroku app
-  // const SERVER_URL = 'https://pushservertest.herokuapp.com/save-subscription'
+  const SERVER_URL = 'https://pushservertest.herokuapp.com/save-subscription'
   // localhost
-  const SERVER_URL = 'http://localhost:8080/save-subscription'
+  // const SERVER_URL = 'http://localhost:8080/save-subscription'
   const response = await fetch(SERVER_URL, {
     method: 'post',
     headers: {
@@ -50,20 +50,20 @@ self.addEventListener('push', function(event) {
   }
 })
 
-// self.addEventListener('fetch', function(event) {
-//   console.log('fetching');
-//   event.respondWith(
-//     caches.match(event.request)
-//       .then(function(response) {
-//         // Cache hit - return response
-//         if (response) {
-//           return response;
-//         }
-//         return fetch(event.request);
-//       }
-//     )
-//   );
-// });
+self.addEventListener('fetch', function(event) {
+  console.log('fetching');
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        // Cache hit - return response
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      }
+    )
+  );
+});
 
 const showLocalNotification = (title, body, swRegistration) => {
   const options = {
